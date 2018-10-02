@@ -12,3 +12,13 @@ var convert = function (temp, toFarenheit) {
 	}
 };
 
+// Listen for input changes
+document.addEventListener('input', function (event) {
+	if (event.target.value.length < 1) return;
+	if (event.target.id === 'farenheit') {
+		celcius.value = convert(event.target.value);
+	} else {
+		farenheit.value = convert(event.target.value, true);
+	}
+}, false);
+
